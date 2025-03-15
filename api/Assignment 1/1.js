@@ -1,1 +1,0 @@
-// Declare variables that represents 1 data type in javascript.

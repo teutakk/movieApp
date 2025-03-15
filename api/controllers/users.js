@@ -73,20 +73,6 @@ const createPost = async (req, res) => {
     }
 };
 
-const createKomuna = (req, res) => {
-    console.log(req.body);
-    const emri = req.body.emri;
-    const pershkrimi = req.body.pershkrimi;
-    console.log(emri, pershkrimi);
-    database.query(
-        `INSERT INTO komunat (Emri, Pershkrimi) VALUES ('${req.body.emri}', '${pershkrimi}')`,
-        (err, results) => {
-            if (err) throw err;
-            res.send(`Komuna ${emri} u insertua ne databaze`);
-        }
-    );
-};
-
 const createUser = async (req, res) => {
     const emri = req.body.emri;
     const email = req.body.email;
@@ -127,7 +113,6 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
     getUsers,
-    createKomuna,
     createUser,
     deleteUser,
     login,
