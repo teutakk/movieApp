@@ -31,10 +31,10 @@ const login = async (req, res) => {
         const password = req.body.password;
         const user = await prisma.user.findUnique({ where: { email } });
         if (!user) {
-            res.json({ message: 'Invalid credentials! email' });
+           return res.json({ message: 'Invalid credentials! email' });
         }
         if (password !== user.password) {
-            res.json({ message: 'Invalid credentials! pw' });
+           return  res.json({ message: 'Invalid credentials! pw' });
         }
         const token = jwt.sign({ user }, 'my-super-secret-key', {
             expiresIn: '25m',
