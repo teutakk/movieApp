@@ -1,0 +1,22 @@
+<!-- <p>dashboard works!</p> -->
+<div class="dashboard-container" >    
+    <div *ngIf="!this.hideContent">
+        <div class="search-hero" style="padding-top: 100px;">
+            <input type="text" name="search" [(ngModel)]="searchText" placeholder="Search movies..." />
+        </div>
+    <div class="container2" >
+    
+        <div class="movies-container" *ngFor="let movie of this.movies?.results | filter: searchText">
+            <div class="content">
+                <img style="width: 100%;" data-aos="flip-left" src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{movie?.poster_path}}" />
+                <p class="title" data-aos="zoom-out" >{{movie?.title}}</p>
+                <p class="overview" data-aos="zoom-in" >{{movie?.overview}}</p>
+                <p class="button" (click)="this.movieDetails(movie?.id)">More</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+    <button (click)="logOut()">Log Out</button> -->
+</div>

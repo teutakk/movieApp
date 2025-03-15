@@ -1,0 +1,16 @@
+.nf-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: max(30px, 2vw);
+}
+.nf-button{
+    border: 1px solid #6f4df7;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: max(30px, 2vw);
+    background-color: #5777e2;
+    color: #fff;
+    font-size: max(15px, 1vw);
+}

@@ -1,0 +1,24 @@
+<div class="container3">
+    <div class="content">
+        <div class="row" >
+            <div class="col-md-4">
+                <img  style="width: 100%;"
+                    src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2{{this.movieDetails?.poster_path}}"
+                />
+            </div>
+            <div class="col-md-8 details">
+                <h1>{{movieDetails?.title}}</h1>
+                <p class="overview">{{movieDetails?.overview}}</p>
+                <div class="genres" *ngFor="let genre of this.movieDetails?.genres ">
+                <p class="genre"> {{genre.name}}</p>
+                </div>
+                <div class="average">Vote Average: {{movieDetails?.vote_average}}</div>
+                <div class="vote" style="display: flex; align-items: center; gap: 10px; ">Vote Count: {{movieDetails?.vote_count}} 
+                    <span (click)="this.increase()" style="display: flex; align-items: center; gap: 10px; "><mat-icon>thumb_up</mat-icon></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>
